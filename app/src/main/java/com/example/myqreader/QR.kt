@@ -93,11 +93,11 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
             var index_inicio_direccion = scanResult!!.indexOf("TO:")
             var index_final_direccion = scanResult!!.indexOf(";", index_inicio_direccion+3)
 
-            var index_inicio_asunto = scanResult!!.indexOf("SUB:")
-            var index_final_asunto = scanResult!!.indexOf(";", index_inicio_asunto+1)
+            var index_inicio_asunto = scanResult!!.indexOf("SUB:", index_inicio_direccion+3)
+            var index_final_asunto = scanResult!!.indexOf(";", index_inicio_asunto+4)
 
-            var index_inicio_cuerpo = scanResult!!.indexOf("BODY:")
-            var index_final_cuerpo = scanResult!!.indexOf(";", index_inicio_cuerpo+1)
+            var index_inicio_cuerpo = scanResult!!.indexOf("BODY:",index_inicio_asunto+4)
+            var index_final_cuerpo = scanResult!!.indexOf(";", index_inicio_cuerpo+5)
 
             var direccion_correo = ""
             var asunto = ""
