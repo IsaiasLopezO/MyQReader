@@ -53,7 +53,6 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
         val scanResult = p0?.text
         val vibratorService = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibratorService.vibrate(100)
-        //Log.d("QR_LEIDO", scanResult!!)
 
         if (scanResult!!.substring(startIndex = 0, endIndex = 4) == "http"){
             Log.d("QR_LEIDO", scanResult!!)
@@ -106,9 +105,11 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
             for(i in index_inicio_direccion+3 until index_final_direccion){
                 direccion_correo += scanResult[i]
             }
+
             for(i in index_inicio_asunto+4 until index_final_asunto){
                 asunto += scanResult[i]
             }
+
             for(i in index_inicio_cuerpo+5 until index_final_cuerpo){
                 cuerpo_correo += scanResult[i]
             }
@@ -224,7 +225,6 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
             TEL_FAX = "98745"
             URL = "www.isaias.com"
 
-
             val i = Intent(Intent.ACTION_INSERT).apply {
                 type = ContactsContract.Contacts.CONTENT_TYPE
                 putExtra(ContactsContract.Intents.Insert.NAME, N)
@@ -261,7 +261,6 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
                 scannerView = ZXingScannerView(this)
                 setContentView(scannerView)
             }
-
             scannerView?.setResultHandler(this)
             scannerView?.startCamera()
         }
@@ -299,7 +298,6 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
                             Toast.makeText(this@QR, getString(R.string.Permiso_camara_no_se_ha_concedido), Toast.LENGTH_LONG).show()
                             finish()
                         }
-
                     }
                 }
             }
