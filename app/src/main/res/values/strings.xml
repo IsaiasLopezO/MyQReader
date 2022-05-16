@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyQReader!</string>
+    <string name="version1_byIsaias">Versión 1.0 por Isaías López Ortiz</string>
+    <string name="permiso_necesario">Permiso necesario</string>
+    <string name="Se_necesita_camara">Es necesario el acceso a la cámara para que la app funcione.</string>
+    <string name="Aceptar">Aceptar</string>
+    <string name="Denegar">Denegar</string>
+    <string name="Permiso_camara_no_se_ha_concedido">El permiso de la cámara no se ha concedido.</string>
+    <string name="Error">Error</string>
+    <string name="Codigo_no_reconocido">Código QR no reconocido.</string>
+    <string name="No_hay_app_de_correo">No hay alguna app instalada para mandar un correo electrónico.</string>
+</resources>
