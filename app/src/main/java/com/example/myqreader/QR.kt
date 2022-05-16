@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Vibrator
 import android.provider.ContactsContract
+import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -296,6 +297,12 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
                                 .show()
                         }else{
                             Toast.makeText(this@QR, getString(R.string.Permiso_camara_no_se_ha_concedido), Toast.LENGTH_LONG).show()
+
+                            var i = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            var uri = Uri.fromParts("package", packageName, null)
+                            i.setData(uri)
+                            startActivity(i)
                             finish()
                         }
                     }
