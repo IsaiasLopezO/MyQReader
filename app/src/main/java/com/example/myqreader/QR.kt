@@ -109,7 +109,7 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
             for(i in index_inicio_asunto+4 until index_final_asunto){
                 asunto += scanResult[i]
             }
-            for(i in index_inicio_cuerpo+5 until scanResult.length){
+            for(i in index_inicio_cuerpo+5 until index_final_cuerpo){
                 cuerpo_correo += scanResult[i]
             }
 
@@ -125,9 +125,9 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
 
             Log.d("QR_LEIDO", scanResult!!)
             Log.d("QR_LEIDO", "eMail leido")
-            Log.d("QR_LEIDO", direccion_correo)
-            Log.d("QR_LEIDO", asunto)
-            Log.d("QR_LEIDO", cuerpo_correo)
+            Log.d("QR_LEIDO", "Direccion: $direccion_correo")
+            Log.d("QR_LEIDO", "Asunto: $asunto")
+            Log.d("QR_LEIDO", "Cuerpo: $cuerpo_correo")
 
         }else if (scanResult!!.substring(startIndex = 0, endIndex = 11) == "BEGIN:VCARD"){
             var index_inicio_VERSION = scanResult.indexOf("VERSION:")
