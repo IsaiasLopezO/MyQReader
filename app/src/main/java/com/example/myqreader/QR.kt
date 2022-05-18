@@ -220,12 +220,6 @@ class QR : AppCompatActivity(), ZXingScannerView.ResultHandler {
             Log.d("QR_LEIDO", "EMAIL_WORK_INTERNET: $EMAIL_WORK_INTERNET")
             Log.d("QR_LEIDO", "URL: $URL")
 
-            ORG = "FI UNAM"
-            TITLE = "Maestro"
-            TEL_WORK_VOICE = "12345"
-            TEL_FAX = "98745"
-            URL = "www.isaias.com"
-
             val i = Intent(Intent.ACTION_INSERT).apply {
                 type = ContactsContract.Contacts.CONTENT_TYPE
                 putExtra(ContactsContract.Intents.Insert.NAME, N)
